@@ -1,0 +1,11 @@
+#flask template git
+https://github.com/berlotto/flask-app-template
+
+#api url
+http://api.open-notify.org/iss-now.json
+
+#api doc
+http://open-notify.org/Open-Notify-API/ISS-Location-Now/
+
+#flask tutorial on real python to follow
+https://realpython.com/flask-by-example-part-1-project-setup/

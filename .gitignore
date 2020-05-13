@@ -1,0 +1,15 @@
+*~
+
+/venv
+
+*.db
+
+*.log
+
+*.pid
+
+.venv*
+
+*.swp
+
+*.pyc
