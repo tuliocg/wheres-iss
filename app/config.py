@@ -5,7 +5,7 @@ base_dir = os.path.abspath(os.path.dirname(__file__))
 class Config:
     SECRET_KEY = os.environ.get("SECRET_KEY") or 'some hard ass string'
 
-class DevelopmentConfig(Config):
+class StagingConfig(Config):
     DEBUG = True
     SQLALCHEMY_DATABASE_URI = os.environ.get("DEV_DATABASE_URL") or \
         'sqlite:///{}'.format(os.path.join(base_dir, 'database/dev_db.db'))
@@ -18,8 +18,8 @@ class ProductionConfig(Config):
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
 config = {
-    'development': DevelopmentConfig,
+    'staging': StagingConfig,
     'production': ProductionConfig,
 
-    'default': DevelopmentConfig
+    'default': StagingConfig
 }

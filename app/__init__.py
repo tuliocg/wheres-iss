@@ -1,16 +1,20 @@
 __author__ = 'github/tuliocg'
 
+import os
 from datetime import datetime
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_cors import CORS
 
+#from app import config
 from app.config import config
 
-enviroment = 'development'
+enviroment = os.environ.get('APP_SETTINGS')
+print(enviroment)
 
 app = Flask(__name__)
 app.config.from_object(config[enviroment])
+#app.config.from_object(os.environ['APP_SETTINGS'])
 CORS(app)
 
 db = SQLAlchemy(app)
