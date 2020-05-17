@@ -7,18 +7,19 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_cors import CORS
 
 #from app import config
-from app.config import config
+from config import config
 
 enviroment = os.environ.get('APP_SETTINGS')
 print(enviroment)
 
 app = Flask(__name__)
 app.config.from_object(config[enviroment])
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 #app.config.from_object(os.environ['APP_SETTINGS'])
 CORS(app)
 
 db = SQLAlchemy(app)
-from app.models import ISS
+from models import ISS
 db.create_all()
 
 def insert_iss_position():
@@ -52,4 +53,3 @@ def insert_iss_position():
 def hello_wsgi():
     return "app entrypoint"
 
-from app import views

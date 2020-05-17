@@ -1,6 +1,6 @@
 __author__ = 'github/tuliocg'
 
-#default modules
+#standard modules
 from datetime import datetime
 import requests
 import os
